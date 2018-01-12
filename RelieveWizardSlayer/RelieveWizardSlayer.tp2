@@ -1,0 +1,29 @@
+BACKUP ~RelieveWizardSlayer/Backup~
+AUTHOR ~Raduziel~
+VERSION ~1.0~
+
+LANGUAGE ~English~
+		 ~RelieveWizardSlayer/Tra/English~
+		 ~RelieveWizardSlayer/Tra/English/Setup.tra~
+		 ~RelieveWizardSlayer/Tra/English/RelieveWizardSlayer.tra~
+		 
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				RELIEVE THE WIZARD SLAYER (IWDEE, EET, BGEE and BG2EE)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @1
+INCLUDE ~RelieveWizardSlayer/Components/RelieveWizardSlayer.tpa~
+
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				    VALYGAR, THE WIZARD SLAYER (BG2EE and EET only)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+BEGIN @2
+REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @3
+INCLUDE  ~RelieveWizardSlayer/Components/Valygar.tpa~
