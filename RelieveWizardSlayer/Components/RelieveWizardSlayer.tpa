@@ -19,7 +19,14 @@ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~                  //Kindly provide
 	END
 BUT_ONLY_IF_IT_CHANGES
 
-COPY ~RelieveWizardSlayer\Itm\Relieve~ ~override~                //Potions that are not altered by the previous code
+COPY_EXISTING ~POTN33.itm~ ~override~                            //Potion of Magic Blocking
+WRITE_BYTE 0x2f (THIS BAND 0b11111101)
+
+COPY_EXISTING ~POTN34.itm~ ~override~                            //Potion of Magic Protection
+WRITE_BYTE 0x2f (THIS BAND 0b11111101)
+
+COPY_EXISTING ~POTN35.itm~ ~override~                            //Potion of Magic Shielding
+WRITE_BYTE 0x2f (THIS BAND 0b11111101)
 
 ACTION_IF FILE_EXISTS_IN_GAME ~override\rr#wssf1.spl~ THEN BEGIN //Checks for Wizard Slayer Rebalancing Mod
 

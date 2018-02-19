@@ -5,7 +5,7 @@
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-ACTION_FOR_EACH creature IN valyg8 valyg9 valyg11 valyg12 valyg14 BEGIN             //Turns Valygar into a Fighter and gives him the Wizard Slayer kit
+ACTION_FOR_EACH creature IN valyg8 valyg9 valyg11 valyg12 valyg14 BEGIN            //Turns Valygar into a Fighter and gives him the Wizard Slayer kit
 
   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
 
@@ -21,5 +21,10 @@ ACTION_FOR_EACH creature IN valyg8 valyg9 valyg11 valyg12 valyg14 BEGIN         
   
   STRING_SET ~2837~ @201                                                           //Alters Valygar's Bio
   
-  COPY ~RelieveWizardSlayer\Itm\Valygar~ ~override~                                //Alers Valygar's Equipment
- //EoF
+  COPY_EXISTING ~NPCHAN.itm~ ~override~                                            //Alters Valygar's Armor
+  WRITE_BYTE 0x1f (THIS BAND 0b11110111)
+  
+  COPY_EXISTING ~NPSW04.itm~ ~override~                                            //Alters Valygar's Katana
+  WRITE_BYTE 0x1f (THIS BAND 0b11110111)
+  
+//EoF
