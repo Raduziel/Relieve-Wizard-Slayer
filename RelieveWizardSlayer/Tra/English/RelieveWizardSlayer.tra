@@ -23,7 +23,28 @@ Whenever a Wizard Slayer lands a successful hit on an arcane spellcaster the tar
 
 Shatter Magic:
 A Wizard Slayer can channel his innate magic resistance into his weapons in order to break through the magical defenses of arcane spellcasters. During the round when this ability is activated, each successful hit removes one combat and one specific protection from his target. However, this temporarily nullifies the Wizard Slayer's innate magic resistance making him vulnerable to magic during the next 2 rounds. Until his magic resistance recovers, the Wizard Slayer cannot use any special abilities that rely on it.~
-@103 = ~WIZARD SLAYER: This warrior has been specially trained by <PRO_HISHER> sect to excel in hunting and combating spellcasters of all kinds.
+@103 = ~WIZARD SLAYER: This warrior specializes in hunting down wielders of arcane magic. To that end, <PRO_HESHE> conditions <PRO_HISHER> body to resist magic and learns techniques that can disrupt spellcasting. The Wizard Slayer must remain fully devoted to <PRO_HISHER> cause and cannot pursue additional professions.
+
+ Advantages:
+-  Gains 20% magic resistance at level 1.
+-  Gains additional 2% bonus to magic resistance per level.
+-  Gains the Nullify Magic ability at level 1 and additional uses at levels 10 and 20.
+-  Gains the Protect ability at level 1 and additional uses at levels 10 and 20
+
+Nullify Magic:
+Upon activation, the wizard slayer nullifies arcane magic in a 30ft area around <PRO_HIMHER>. Any arcane spellcasters caught in the area of effect will experience 100% spell failure for 5 rounds. This effect bypasses magic resistance and can't be saved against.
+
+Protect Allies:
+
+For the next 5 rounds the Wizard Slayer sacrifices 20% of <PRO_HISHER> magic resistance and applies it to <PRO_HISHER> party.
+
+Disadvantages:
+
+-  The Wizard Slayer discipline requires dedication and as a result they cannot dual class
+-  The arduous training Wizard Slayers go through takes its toll and results in -2 Constitution
+-  Devotion to mage hunting limits this warrior's martial training and <PRO_HESHE> can only achieve mastery (3 slots) in any weapon
+– May not use any magic items apart from weapons, armor and and equipment that provides Magic Resistance and/or Magic Damage Resistance that is allowed to a Fighter.~
+@104 = ~WIZARD SLAYER: This warrior has been specially trained by <PRO_HISHER> sect to excel in hunting and combating spellcasters of all kinds.
 
 Advantages:
 – Each successful hit bestows a 10% cumulative chance of spell failure on the target.

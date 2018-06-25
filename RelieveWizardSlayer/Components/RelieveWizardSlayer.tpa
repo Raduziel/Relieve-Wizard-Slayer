@@ -45,7 +45,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~override\rr#wssf1.spl~ THEN BEGIN //Checks for Wi
 	END
 END
 
-ELSE BEGIN                                                       //Installs if the WSR is not installed
+ACTION_IF FILE_EXISTS_IN_GAME ~override\wsosp1.spl~ THEN BEGIN   //Checks for Wizard Slayer Overhaul Mod
 
 	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
 		STRING_SET ~25361~ @103
@@ -60,6 +60,24 @@ ELSE BEGIN                                                       //Installs if t
 		STRING_SET ~37097~ @103
 		STRING_SET ~25203~ @103
 	END
+END
+
+ELSE BEGIN                                                       //Installs if the WSR is not installed
+
+	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+		STRING_SET ~25361~ @104
+		STRING_SET ~24285~ @104
+	END
+
+	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+		STRING_SET ~25203~ @104
+	END
+
+	ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+		STRING_SET ~37097~ @104
+		STRING_SET ~25203~ @104
+	END
 
 END
+
 //EoF
