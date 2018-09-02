@@ -1,0 +1,83 @@
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+//
+//				  RELIEVE THE WIZARD SLAYER (IWDEE, BGEE, BG2EE and EET)
+//__________________________________________________________________________________
+//__________________________________________________________________________________
+
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~                  //Kindly provided and explained by kjeron with a solid base that Grammarsalad gave me to start knowing what to ask and look for.
+	PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+		READ_SHORT	0x6a	fx_off
+		READ_SHORT	0x70	glob_fx
+		FOR	(j = 0; j < glob_fx; ++j)	BEGIN
+			READ_SHORT (fx_off + j * 0x30) opcode
+			PATCH_IF (opcode = 31) OR (opcode = 166)  BEGIN
+				WRITE_BYTE	0x002f	(THIS BAND 0b11111101)
+				SET j = glob_fx
+			END
+		END
+	END
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~POTN33.itm~ ~override~                            //Potion of Magic Blocking
+WRITE_BYTE 0x2f (THIS BAND 0b11111101)
+
+COPY_EXISTING ~POTN34.itm~ ~override~                            //Potion of Magic Protection
+WRITE_BYTE 0x2f (THIS BAND 0b11111101)
+
+COPY_EXISTING ~POTN35.itm~ ~override~                            //Potion of Magic Shielding
+WRITE_BYTE 0x2f (THIS BAND 0b11111101)
+
+ACTION_IF FILE_EXISTS_IN_GAME ~override\rr#wssf1.spl~ THEN BEGIN //Checks for Wizard Slayer Rebalancing Mod
+
+	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+		STRING_SET ~25361~ @102
+		STRING_SET ~24285~ @102
+	END
+
+	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+		STRING_SET ~25203~ @102
+	END
+
+	ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+		STRING_SET ~37097~ @102
+		STRING_SET ~25203~ @102
+	END
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~override\wsosp1.spl~ THEN BEGIN   //Checks for Wizard Slayer Overhaul Mod
+
+	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+		STRING_SET ~25361~ @103
+		STRING_SET ~24285~ @103
+	END
+
+	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+		STRING_SET ~25203~ @103
+	END
+
+	ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+		STRING_SET ~37097~ @103
+		STRING_SET ~25203~ @103
+	END
+END
+
+ELSE BEGIN                                                       //Installs if the WSR is not installed
+
+	ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+		STRING_SET ~25361~ @104
+		STRING_SET ~24285~ @104
+	END
+
+	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+		STRING_SET ~25203~ @104
+	END
+
+	ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+		STRING_SET ~37097~ @104
+		STRING_SET ~25203~ @104
+	END
+
+END
+
+//EoF
