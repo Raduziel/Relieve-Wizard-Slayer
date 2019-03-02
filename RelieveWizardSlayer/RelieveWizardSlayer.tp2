@@ -1,11 +1,16 @@
 BACKUP ~RelieveWizardSlayer/Backup~
 AUTHOR ~Raduziel~
-VERSION ~1.3~
+VERSION ~1.4~
 
 LANGUAGE ~English~
 		 ~RelieveWizardSlayer/Tra/English~
 		 ~RelieveWizardSlayer/Tra/English/Setup.tra~
 		 ~RelieveWizardSlayer/Tra/English/RelieveWizardSlayer.tra~
+
+LANGUAGE ~Russkiy (Perevod: Saigon1983)~
+         ~Russian~
+		 ~RelieveWizardSlayer/Tra/Russian/Setup.tra~
+		 ~RelieveWizardSlayer/Tra/Russian/IHateUndead.tra~
 		 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
